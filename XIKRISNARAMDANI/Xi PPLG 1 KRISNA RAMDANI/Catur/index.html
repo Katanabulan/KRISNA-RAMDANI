@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catur Sederhana</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(8, 60px);
+      grid-template-rows: repeat(8, 60px);
+      border: 2px solid #333;
+    }
+
+    .square {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 36px;
+      cursor: pointer;
+    }
+
+    .light {
+      background-color: #f0d9b5;
+    }
+
+    .dark {
+      background-color: #b58863;
+    }
+
+    .selected {
+      outline: 3px solid red;
+    }
+
+    .info {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+.footer {
+  background:rgb(5, 5, 18);
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 99%;
+  text-align: left;
+    } 
+.header {
+color: blue;
+padding: 5px;
+text-align: center;
+}
+  </style>
+</head>
+<body>
+
+  <div class="board" id="board"></div>
+  <div class="info" id="info">Giliran: Putih</div>
+ <div class="footer"> 
+    &copy;  2025 Krisna Ramdani Copyright </div>
+  <div class="header">
+    <h1>CATUR SEDERHANA</h1>
+  </div>
+  <script>
+    const boardElement = document.getElementById("board");
+    const infoElement = document.getElementById("info");
+    let selectedSquare = null;
+    let turn = "white";
+
+    const pieces = {
+      r: "♜", n: "♞", b: "♝", q: "♛", k: "♚", p: "♟",
+      R: "♖", N: "♘", B: "♗", Q: "♕", K: "♔", P: "♙"
+    };
+
+    let board = [
+      ["r", "n", "b", "q", "k", "b", "n", "r"],
+      ["p", "p", "p", "p", "p", "p", "p", "p"],
+      ["", "", "", "", "", "", "", ""],
+      ["", "", "", "", "", "", "", ""],
+      ["", "", "", "", "", "", "", ""],
+      ["", "", "", "", "", "", "", ""],
+      ["P", "P", "P", "P", "P", "P", "P", "P"],
+      ["R", "N", "B", "Q", "K", "B", "N", "R"]
+    ];
+
+    function renderBoard() {
+      boardElement.innerHTML = "";
+      for (let row = 0; row < 8; row++) {
+        for (let col = 0; col < 8; col++) {
+          const square = document.createElement("div");
+          square.classList.add("square");
+          square.classList.add((row + col) % 2 === 0 ? "light" : "dark");
+          square.dataset.row = row;
+          square.dataset.col = col;
+
+          const piece = board[row][col];
+          if (piece) square.textContent = pieces[piece];
+
+          square.addEventListener("click", handleClick);
+          boardElement.appendChild(square);
+        }
+      }
+    }
+
+    function handleClick(e) {
+      const row = parseInt(e.currentTarget.dataset.row);
+      const col = parseInt(e.currentTarget.dataset.col);
+      const clickedPiece = board[row][col];
+
+      if (selectedSquare) {
+        const [fromRow, fromCol] = selectedSquare;
+        const piece = board[fromRow][fromCol];
+
+        // Check if it's the correct turn
+        if ((turn === "white" && piece === piece.toUpperCase()) ||
+            (turn === "black" && piece === piece.toLowerCase())) {
+          // Move the piece (no legality checking yet)
+          board[row][col] = piece;
+          board[fromRow][fromCol] = "";
+          turn = turn === "white" ? "black" : "white";
+          infoElement.textContent = `Giliran: ${turn === "white" ? "Putih" : "Hitam"}`;
+        } else {
+          alert("Itu bukan giliranmu!");
+        }
+
+        selectedSquare = null;
+        renderBoard();
+      } else {
+        if (clickedPiece) {
+          selectedSquare = [row, col];
+          e.currentTarget.classList.add("selected");
+        }
+      }
+    }
+
+    renderBoard();
+  </script>
+</body>
+</html>

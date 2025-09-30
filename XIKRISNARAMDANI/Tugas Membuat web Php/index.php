@@ -31,9 +31,10 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
       elseif ($page == "profile") {
         echo "<h1>Profile</h1>";
         echo "<img src='krisna.jpg' alt='krisna.jpg' style='width:200px; height:200px; border-radius: 50%;'>";
-        echo "<p><h3>Nama: KRISNARAMDANI Pelajar<br>
-        Kelas:XIPPLG1<br>
-        Hoby:Berolahraga</h3></p>";
+        echo "<p><h3>Nama:KrisnaRamdani <br>
+        Kelas:XI PPLG1<br>
+        Hoby:Berolahraga<br>
+        Status:MasihPelajar</h3></p>";
       
     }
        

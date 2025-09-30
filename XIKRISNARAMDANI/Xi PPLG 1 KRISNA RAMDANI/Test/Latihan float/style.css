@@ -1,0 +1,15 @@
+H1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+.gambar {
+    width: 300px;
+    float: left;
+    margin: 10px;
+}
+.kotak{
+    width: auto;
+    float: justify;
+    margin-left: 10px;
+}

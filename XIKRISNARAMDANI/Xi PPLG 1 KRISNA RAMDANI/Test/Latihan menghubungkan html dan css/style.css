@@ -1,0 +1,19 @@
+h1 {
+    color: rgba(62, 153, 202, 0.719);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.kotak{
+    padding: 50px;
+    width: 100px;
+    color: aqua;
+    margin: 10px;
+    background: aqua;
+}
+#kotak{
+    padding: 40px;
+    width: 400px;
+    color: aqua;
+    margin: 0px;
+    background: aqua;
+}

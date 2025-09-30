@@ -1,0 +1,50 @@
+h1 {
+    color: rgba(70, 109, 209, 0.719);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.Yow1{
+    background:url("Leonardo.jpg");
+    color: aqua;                                                                                                    
+    padding-top:  50px;
+    margin-top: 20px;
+    /* width: 400px; */
+}
+.Yow2{
+    background:url("Leonardo.jpg");
+    color: aqua;                                                                                                    
+    padding-left:  50px;
+    margin-left: 20px;
+    /* width: 400px; */
+}
+.Yow3{
+    background-color: blue;
+    color: aqua;                                                                                                    
+    padding-right:  50px;
+    margin-right: 20px;
+    /* width: 400px; */
+    position: absolute;
+}
+.Yow4{
+    background-color: red;
+    color: aqua;                                                                                                    
+    padding-bottom:  50px;
+    margin-bottom: 20px;
+    /* width: 400px; */
+    position: absolute;
+}
+#Baris_1{
+    border-style: solid;
+    border-width: 5px;
+    border-color: violet;
+}
+#Baris_2{
+    Border-style: dotted;
+    border-width: 5px;
+    border-color: aqua;
+}
+#Baris_3{
+    Border-style: dashed;
+    border-width: 5px;
+    border-color: red;
+}
