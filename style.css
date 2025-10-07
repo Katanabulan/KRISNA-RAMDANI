@@ -1,0 +1,134 @@
+/* ====== STYLE DASAR ====== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: auto;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ====== HEADER ====== */
+.header {
+  background-image:url(gacor.jpeg);
+  color: #000;
+  text-align: center;
+  padding: 20px 10px;
+  /* font-size: 1.5em; */
+  /* font-weight: bold; */
+  /* background-repeat: no-repeat; */
+  background-size: 100%;
+}
+
+/* ====== MAIN AREA ====== */
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+/* ====== LEFT MENU ====== */
+.left {
+  flex: 1 1 20%;
+  background-color: #fafafa;
+  padding: 15px;
+  box-sizing: border-box;
+  border-right: 1px solid #ddd;
+}
+
+.left h3 {
+  text-align: center;
+}
+
+.left ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left ul li {
+  margin: 10px 0;
+}
+
+.left ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* ====== MIDDLE CONTENT ====== */
+.middle {
+  flex: 1 1 55%;
+  padding: 15px;
+  box-sizing: border-box;
+  /* background-image:url(background2.jpg); */
+}
+
+.middle h3 {
+  text-align: center;
+}
+
+.middle img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
+/* ====== RIGHT SIDEBAR ====== */
+.right {
+  flex: 1 1 25%;
+  background-color: #fafafa;
+  padding: 15px;
+  box-sizing: border-box;
+  border-left: 1px solid #ddd;
+}
+
+.right h3 {
+  text-align: center;
+}
+
+.right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.right ul li {
+  margin: 10px 0;
+}
+
+.right ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  background-image:url(background.jpg);
+  color: black;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 99%;
+}
+
+/* ====== RESPONSIVE ====== */
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .left, .middle, .right {
+    flex: 1 1 100%;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .header, .footer {
+    font-size: 1.2em;
+  }
+}
